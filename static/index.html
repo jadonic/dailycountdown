@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Countdown</title>
+  <link rel="stylesheet" href="templates/main.css">
+  <link rel="stylesheet" href="templates/bootstrap.css">
+</head>
+<body>
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center wp days schrift"></div>
+
+<script>
+  let countDownBox	= document.querySelector(".allTime");
+  let daysBox			= document.querySelector(".days");
+  let hrsBox			= document.querySelector(".hrs");
+  let minBox			= document.querySelector(".min");
+  let secBox			= document.querySelector(".sec");
+  let countDownDate	= new Date("Dec 31, 2022 23:59:59").getTime();
+  
+  let x = setInterval(function() {
+    let d = new Date().toLocaleTimeString();
+    let now = new Date("Dec 31, 2022 " + d).getTime();
+
+    let distance = countDownDate - now;
+
+    daysBox.innerHTML	= distance / 1000;
+  
+  });
+</script>
+
+
+</body>
+</html>
